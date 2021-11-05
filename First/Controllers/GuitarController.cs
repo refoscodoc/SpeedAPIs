@@ -23,5 +23,23 @@ namespace First.Controllers
         {
             return Ok(await _businessProvider.GetGuitars());
         }
+
+        [HttpPost]
+        public async Task<IActionResult> Post([FromBody] GuitarViewModel guitar)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest();
+            }
+
+            if (guitar == null)
+            {
+                return BadRequest();
+            }
+
+            var result = await _businessProvider.AddGuitar(guitar);
+
+            return Created("/api/Guitar", result);
+        }
     }
 }

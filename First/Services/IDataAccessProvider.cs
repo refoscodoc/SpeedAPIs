@@ -6,29 +6,14 @@ namespace First.Services
 {
     public interface IDataAccessProvider
     {
-        Task<GuitarModel> AddGuitar(GuitarModel guitar)
-        {
-            throw new System.NotImplementedException();
-        }
+        Task<GuitarModel> AddGuitar(GuitarModel guitar);
 
-        Task<GuitarModel> DeleteGuitar(GuitarModel guitar)
-        {
-            throw new System.NotImplementedException();
-        }
+        Task<GuitarModel> DeleteGuitar(GuitarModel guitar);
 
-        Task<GuitarModel> EditGuitar(GuitarModel guitar)
-        {
-            throw new System.NotImplementedException();
-        }
+        Task<GuitarModel> EditGuitar(GuitarModel guitar);
 
-        Task<GuitarModel> SearchGuitar(GuitarModel guitar)
-        {
-            throw new System.NotImplementedException();
-        }
+        Task<GuitarModel> SearchGuitar(GuitarModel guitar);
 
-        Task<IEnumerable<GuitarModel>> GetGuitars()
-        {
-            throw new System.NotImplementedException();
-        }
+        Task<IEnumerable<GuitarModel>> GetGuitars();
     }
 }

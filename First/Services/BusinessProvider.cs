@@ -1,12 +1,14 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using First.Models;
+using First.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 
 namespace First.Services
 {
-    public class BusinessProvider : IDataAccessProvider
+    public class BusinessProvider
     {
         private readonly IDataAccessProvider _dataAccessProvider;
 
@@ -15,12 +17,29 @@ namespace First.Services
             _dataAccessProvider = dataAccessProvider;
         }
 
-        public async Task AddGuitar(GuitarModel guitar)
+        public async Task<GuitarViewModel> AddGuitar(GuitarViewModel guitar)
         {
-            if (guitar != null)
+            var newGuitar = new GuitarModel
             {
-                await _dataAccessProvider.AddGuitar(guitar);    
-            }
+                Id = Guid.NewGuid(),
+                Brand = guitar.Brand,
+                Year = guitar.Year,
+                Wood = guitar.Wood,
+                Price = guitar.Price
+            };
+
+            var der = await _dataAccessProvider.AddGuitar(newGuitar);
+
+            var result = new GuitarViewModel()
+            {
+                Id = Guid.NewGuid(),
+                Wood = der.Wood,
+                Brand = der.Brand,
+                Year = der.Year,
+                Price = der.Price
+            };
+
+            return result;
         }
         
         public async Task<IEnumerable<GuitarModel>> GetGuitars()

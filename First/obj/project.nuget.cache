@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "B2wVQiVt4NiBWhVygvrur1geggsMOygZtqJG+N2dRd7tAgExJxVpZdufJhH7euybh4cIg9J69jDQPy5BrdIjcA==",
+  "dgSpecHash": "qnJmOKw4KdSp4Il3C8Ne7pO8Hsn1I6Qqg7w9E71cuxu1ClP48rcr2gtbNk49VRxRWpw7WDWG9d0pu+IZvC+M3w==",
   "success": true,
   "projectFilePath": "/home/alberto/Documents/C Sharp/SpeedAPIs/First/First.csproj",
   "expectedPackageFiles": [
+    "/home/alberto/.nuget/packages/microsoft.aspnetcore.jsonpatch/5.0.11/microsoft.aspnetcore.jsonpatch.5.0.11.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.aspnetcore.mvc.newtonsoftjson/5.0.11/microsoft.aspnetcore.mvc.newtonsoftjson.5.0.11.nupkg.sha512",
+    "/home/alberto/.nuget/packages/microsoft.csharp/4.7.0/microsoft.csharp.4.7.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.data.sqlite.core/5.0.11/microsoft.data.sqlite.core.5.0.11.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.dotnet.platformabstractions/3.1.6/microsoft.dotnet.platformabstractions.3.1.6.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.entityframeworkcore/5.0.11/microsoft.entityframeworkcore.5.0.11.nupkg.sha512",
@@ -24,6 +27,8 @@
     "/home/alberto/.nuget/packages/microsoft.extensions.options/5.0.0/microsoft.extensions.options.5.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.extensions.primitives/5.0.0/microsoft.extensions.primitives.5.0.0.nupkg.sha512",
     "/home/alberto/.nuget/packages/microsoft.openapi/1.2.3/microsoft.openapi.1.2.3.nupkg.sha512",
+    "/home/alberto/.nuget/packages/newtonsoft.json/13.0.1/newtonsoft.json.13.0.1.nupkg.sha512",
+    "/home/alberto/.nuget/packages/newtonsoft.json.bson/1.0.2/newtonsoft.json.bson.1.0.2.nupkg.sha512",
     "/home/alberto/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.4/sqlitepclraw.bundle_e_sqlite3.2.0.4.nupkg.sha512",
     "/home/alberto/.nuget/packages/sqlitepclraw.core/2.0.4/sqlitepclraw.core.2.0.4.nupkg.sha512",
     "/home/alberto/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.4/sqlitepclraw.lib.e_sqlite3.2.0.4.nupkg.sha512",

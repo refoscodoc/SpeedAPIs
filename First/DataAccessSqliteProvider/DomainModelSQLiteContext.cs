@@ -1,16 +1,17 @@
 using System;
 using System.Linq;
 using First.Models;
+using First.Services;
 using Microsoft.EntityFrameworkCore;
 
 namespace First.DataAccessSqliteProvider
 {
-    public class DomainModelSQLiteContext : DbContext
+    public class DomainModelSqliteContext : DbContext
     {
-        public DomainModelSQLiteContext(DbContextOptions<DomainModelSQLiteContext> options) : base(options)
+        public DomainModelSqliteContext(DbContextOptions<DomainModelSqliteContext> options) : base(options)
         { }
 
-        public DbSet<GuitarModel> DataEventRecords { get; set; }
+        public DbSet<GuitarModel> Guitars { get; set; }
 
         // public DbSet<SourceInfo> SourceInfos { get; set; }
 

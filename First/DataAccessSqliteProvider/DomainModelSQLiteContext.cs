@@ -19,9 +19,6 @@ namespace First.DataAccessSqliteProvider
         {
             builder.Entity<GuitarModel>().HasKey(m => m.Id);
 
-            // shadow properties
-            // builder.Entity<GuitarModel>().Property<DateTime>("UpdatedTimestamp");
-
             base.OnModelCreating(builder);
         }
 

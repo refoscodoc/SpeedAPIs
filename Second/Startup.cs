@@ -6,11 +6,15 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Second.DataAccessSqliteProvider;
+using Second.Services;
+using Newtonsoft.Json;
 
 namespace Second
 {
@@ -26,7 +30,20 @@ namespace Second
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers();
+            var sqlConnectionString = Configuration.GetConnectionString("DataAccessSqliteProvider");
+
+            services.AddDbContext<DomainModelSqliteContext>(options =>
+                options.UseSqlite(sqlConnectionString, b => b.MigrationsAssembly("AspNetCoreMultipleProject")));
+            
+            services.AddScoped<IDataAccessProvider, DataAccessSqliteProvider.DataAccessSqliteProvider>();
+
+            services.AddScoped<BusinessProvider>();
+            
+            services.AddControllers()
+                .AddNewtonsoftJson(options =>
+                {
+                    options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+                });
             services.AddSwaggerGen(c => { c.SwaggerDoc("v1", new OpenApiInfo {Title = "Second", Version = "v1"}); });
         }
 
@@ -47,6 +64,12 @@ namespace Second
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
+            
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+            });
         }
     }
 }

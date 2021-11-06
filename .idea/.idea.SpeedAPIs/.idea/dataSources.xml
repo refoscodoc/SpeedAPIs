@@ -13,5 +13,13 @@
         </library>
       </libraries>
     </data-source>
+    <data-source source="LOCAL" name="horsies" uuid="9c1ed12c-c0b7-4b8f-8af6-2466da7b5701">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <remarks>DB for the second SpeedAPI</remarks>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:$PROJECT_DIR$/Second/SqliteDB/horsies</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>

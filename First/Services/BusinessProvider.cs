@@ -81,7 +81,6 @@ namespace First.Services
         public Task<GuitarModel> SearchGuitar(GuitarModel guitar)
         {
             throw new System.NotImplementedException();
-            return null;
         }
     }
 }

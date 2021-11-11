@@ -15,6 +15,7 @@ using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 using Third.DataAccessDbProvider;
 using Third.Services;
+using Third.ServicesDapper;
 
 namespace Third
 {
@@ -39,6 +40,7 @@ namespace Third
                 );
 
             services.AddScoped<IDataAccessProvider, DataAccessMySqlProvider>();
+            services.AddScoped<IDataAccessProviderDapper, DataAccessMySqlProviderDapper>();
             services.AddScoped<BusinessProvider>();
             
             services.AddControllers()

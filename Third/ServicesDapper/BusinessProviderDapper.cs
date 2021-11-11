@@ -1,24 +1,23 @@
-using System.Collections;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using Third.Models;
+using Third.Services;
 
-namespace Third.Services
+namespace Third.ServicesDapper
 {
-    public class BusinessProvider
+    public class BusinessProviderDapper
     {
-        private readonly IDataAccessProvider _dataAccessProvider;
+        private readonly IDataAccessProviderDapper _dataAccessProviderDapper;
 
-        public BusinessProvider(IDataAccessProvider dataAccessProvider)
+        public BusinessProviderDapper(IDataAccessProviderDapper dataAccessProviderDapper)
         {
-            _dataAccessProvider = dataAccessProvider;
+            _dataAccessProviderDapper = dataAccessProviderDapper;
         }
 
         public async Task<IEnumerable<Pet>> GetAllPets()
         {
-            var data = await _dataAccessProvider.GetAllPets();
+            var data = await _dataAccessProviderDapper.GetAllPets();
 
             var result = data.Select(pet => new Pet
             {
@@ -27,27 +26,27 @@ namespace Third.Services
                 Name = pet.Name,
                 Age = pet.Age
             });
-            
-            
+
+
             return result;
         }
 
         public async Task<Pet> GetPet(int petId)
         {
-            return await _dataAccessProvider.GetPet(petId);
+            return await _dataAccessProviderDapper.GetPet(petId);
         }
 
         public async Task<Pet> AddPet(Pet pet)
         {
-            var newPet = new Pet 
+            var newPet = new Pet
             {
                 Id = pet.Id,
                 Species = pet.Species,
                 Name = pet.Name,
                 Age = pet.Age
             };
-            
-            await _dataAccessProvider.AddPet(newPet);
+
+            await _dataAccessProviderDapper.AddPet(newPet);
 
             return pet;
         }
@@ -64,12 +63,12 @@ namespace Third.Services
                 Species = updatedPet.Species
             };
 
-            await _dataAccessProvider.UpdatePet(pet.Id, newPet);
+            await _dataAccessProviderDapper.UpdatePet(pet.Id, newPet);
         }
 
         public async Task DeletePet(int petId)
         {
-            await _dataAccessProvider.DeletePet(petId);
+            await _dataAccessProviderDapper.DeletePet(petId);
         }
     }
 }

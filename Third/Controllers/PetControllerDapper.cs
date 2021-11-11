@@ -4,32 +4,33 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Third.Models;
 using Third.Services;
+using Third.ServicesDapper;
 
 namespace Third.Controllers
 {
     [Route("api/[controller]")]
-    public class PetController : Controller
+    public class PetControllerDapper : Controller
     {
-        private readonly BusinessProvider _businessProvider;
+        private readonly BusinessProviderDapper _businessProviderDapper;
 
-        public PetController(BusinessProvider businessProvider)
+        public PetControllerDapper(BusinessProviderDapper businessProviderDapper)
         {
-            _businessProvider = businessProvider;
+            _businessProviderDapper = businessProviderDapper;
         }
 
         [HttpGet]
         [ProducesResponseType(typeof(IEnumerable<Pet>), (int) HttpStatusCode.OK)]
         public async Task<IActionResult> GetPets()
         {
-            return Ok(await _businessProvider.GetAllPets());
+            return Ok(await _businessProviderDapper.GetAllPets());
         }
-        
+
         [HttpGet("{id}")]
-        [ProducesResponseType(typeof(Pet), (int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType(typeof(Pet), (int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.NotFound)]
         public async Task<IActionResult> Get(int id)
         {
-            return Ok(await _businessProvider.GetPet(id));
+            return Ok(await _businessProviderDapper.GetPet(id));
         }
 
         [HttpPost]
@@ -45,23 +46,23 @@ namespace Third.Controllers
                 return BadRequest();
             }
 
-            var result = await _businessProvider.AddPet(pet);
+            var result = await _businessProviderDapper.AddPet(pet);
 
             return Created("/api/Horse", result);
         }
 
         [HttpDelete("{id}")]
-        [ProducesResponseType((int)HttpStatusCode.OK)]
-        [ProducesResponseType((int)HttpStatusCode.NotFound)]
-        [ProducesResponseType((int)HttpStatusCode.Conflict)]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.NotFound)]
+        [ProducesResponseType((int) HttpStatusCode.Conflict)]
         public async Task<IActionResult> DeletePet(int id)
         {
             if (id == 0)
             {
                 return BadRequest();
             }
-            
-            await _businessProvider.DeletePet(id);
+
+            await _businessProviderDapper.DeletePet(id);
 
             return Ok();
         }

@@ -26,13 +26,15 @@ namespace Third.DataAccessDbProvider
             await _context.SaveChangesAsync();
             return pet;
         }
-        public async Task UpdateDataEventRecord(long dataEventRecordId, Pet pet)
+        public async Task<Pet> UpdatePet(int id, Pet pet)
         {
             _context.ThirdApi.Update(pet);
             await _context.SaveChangesAsync();
+
+            return pet;
         }
 
-        public async Task DeleteDataEventRecord(int Id)
+        public async Task DeletePet(int Id)
         {
             var entity = _context.ThirdApi.First(t => t.Id == Id);
             _context.ThirdApi.Remove(entity);
@@ -60,42 +62,9 @@ namespace Third.DataAccessDbProvider
             //     .OrderByDescending(dataEventRecord => EF.Property<DateTime>(dataEventRecord, "UpdatedTimestamp"))
             //     .ToListAsync();
             
-            return await _context.ThirdApi
+            return await _context.ThirdApi.OrderBy(x => x.Id)
                 .ToListAsync();
         }
-        //
-        // public async Task<List<SourceInfo>> GetSourceInfos(bool withChildren)
-        // {
-        //     // Using the shadow property EF.Property<DateTime>(srcInfo)
-        //     if (withChildren)
-        //     {
-        //         return await _context.SourceInfos.Include(s => s.DataEventRecords).OrderByDescending(srcInfo => EF.Property<DateTime>(srcInfo, "UpdatedTimestamp")).ToListAsync();
-        //     }
-        //
-        //     return await _context.SourceInfos.OrderByDescending(srcInfo => EF.Property<DateTime>(srcInfo, "UpdatedTimestamp")).ToListAsync();
-        // }
-        //
-        // public async Task<bool> DataEventRecordExists(long id)
-        // {
-        //     var filteredDataEventRecords = _context.DataEventRecords
-        //         .Where(item => item.DataEventRecordId == id);
-        //
-        //     return await filteredDataEventRecords.AnyAsync();
-        // }
-        //
-        // public async Task<SourceInfo> AddSourceInfo(SourceInfo sourceInfo)
-        // {
-        //     _context.SourceInfos.Add(sourceInfo);
-        //     await _context.SaveChangesAsync();
-        //     return sourceInfo;
-        // }
-        //
-        // public async Task<bool> SourceInfoExists(long id)
-        // {
-        //     var filteredSourceInfoRecords = _context.SourceInfos
-        //         .Where(item => item.SourceInfoId == id);
-        //
-        //     return await filteredSourceInfoRecords.AnyAsync();
-        // }
+        
     }
 }

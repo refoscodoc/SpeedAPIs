@@ -61,3 +61,9 @@
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/MariaDB.EntityFramework.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/MySqlConnector.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Pomelo.EntityFrameworkCore.MySql.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/System.Data.SqlClient.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win-arm64/native/sni.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win-x64/native/sni.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win-x86/native/sni.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll

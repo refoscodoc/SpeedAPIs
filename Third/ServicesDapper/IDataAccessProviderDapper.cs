@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Third.Models;
 
-namespace Third.Services
+namespace Third.ServicesDapper
 {
-    public interface IDataAccessProvider
+    public interface IDataAccessProviderDapper
     {
         Task<IEnumerable<Pet>> GetAllPets();
         Task<Pet> GetPet(int petId);

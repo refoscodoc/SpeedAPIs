@@ -7,6 +7,7 @@ using Third.Models;
 using Third.ServicesDapper;
 using Dapper;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace Third.DataAccessDbProvider
 {
@@ -46,18 +47,11 @@ namespace Third.DataAccessDbProvider
             var connectionString = "server=localhost;userid=alberto;password=vinazza;database=SpeedAPIsSchema;";
             var sql = "SELECT * FROM ThirdApi";
             
-            using (var connection = new SqlConnection(connectionString))
+            using (var connection = new MySqlConnection(connectionString))
             {            
                 var petsList = await connection.QueryAsync<Pet>(sql);
                 return petsList.ToList();
-                // Console.WriteLine(orderDetails.Count);
-
-                // FiddleHelper.WriteTable(petsList);
             }
-
-            
-            // return await _context.ThirdApi.OrderBy(x => x.Id)
-            //     .ToListAsync();
         }
     }
 }

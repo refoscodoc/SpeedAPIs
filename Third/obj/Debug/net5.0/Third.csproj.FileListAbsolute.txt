@@ -67,3 +67,14 @@
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win-x86/native/sni.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/unix/lib/netcoreapp2.1/System.Data.SqlClient.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win/lib/netcoreapp2.1/System.Data.SqlClient.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/BouncyCastle.Crypto.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Google.Protobuf.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/K4os.Compression.LZ4.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/K4os.Compression.LZ4.Streams.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/K4os.Hash.xxHash.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/MySql.Data.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Ubiety.Dns.Core.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/ZstdNet.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll

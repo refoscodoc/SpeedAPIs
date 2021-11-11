@@ -42,6 +42,7 @@ namespace Third
             services.AddScoped<IDataAccessProvider, DataAccessMySqlProvider>();
             services.AddScoped<IDataAccessProviderDapper, DataAccessMySqlProviderDapper>();
             services.AddScoped<BusinessProvider>();
+            services.AddScoped<BusinessProviderDapper>();
             
             services.AddControllers()
                 .AddNewtonsoftJson(options =>

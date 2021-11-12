@@ -27,19 +27,49 @@ namespace Third.DataAccessDbProvider
             throw new System.NotImplementedException();
         }
 
-        public Task<Pet> AddPet(Pet pet)
+        public async Task<Pet> AddPet(Pet pet)
         {
-            throw new System.NotImplementedException();
+            var connectionString = "server=localhost;userid=alberto;password=vinazza;database=SpeedAPIsSchema;";
+            var sql = "INSERT INTO ThirdApi (Id, Species, Name, Age) VALUES (@Id, @Species, @Name, @Age)";
+
+            var newPet = new Pet();
+            newPet.Id = pet.Id;
+            newPet.Species = pet.Species;
+            newPet.Name = pet.Name;
+            newPet.Age = pet.Age;
+            
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.QueryAsync<Pet>(sql, newPet);
+            }
+            
+            // throw new System.NotImplementedException();
+            return null;
         }
 
-        public Task<Pet> UpdatePet(int Id, Pet newPet)
+        public async Task<Pet> UpdatePet(int Id, Pet newPet)
         {
-            throw new System.NotImplementedException();
+            var connectionString = "server=localhost;userid=alberto;password=vinazza;database=SpeedAPIsSchema;";
+            var sql = $"UPDATE ThirdApi SET (Name, Species, Age) VALUES (@Name, @Species, @Age) WHERE Id = {Id}";
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.QueryAsync(sql);
+            }
+
+            return null;
         }
 
-        public Task DeletePet(int Id)
+        public async Task DeletePet(int Id)
         {
-            throw new System.NotImplementedException();
+            var connectionString = "server=localhost;userid=alberto;password=vinazza;database=SpeedAPIsSchema;";
+            var sql = $"DELETE FROM ThirdApi WHERE ThirdApi.Id = {Id}";
+
+            using (var connection = new MySqlConnection(connectionString))
+            {
+                await connection.QueryAsync<Pet>(sql);
+            }
+
         }
 
         async Task<IEnumerable<Pet>> IDataAccessProviderDapper.GetAllPets()

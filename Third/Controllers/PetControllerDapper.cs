@@ -66,5 +66,20 @@ namespace Third.Controllers
 
             return Ok();
         }
+
+        [HttpPut("{id}")]
+        [ProducesResponseType((int) HttpStatusCode.OK)]
+        [ProducesResponseType((int) HttpStatusCode.NotFound)]
+        [ProducesResponseType((int) HttpStatusCode.Conflict)]
+        public async Task<IActionResult> UpdatePet(int id, [FromBody] Pet pet)
+        {
+            if (id >= 0)
+            {
+                await _businessProviderDapper.UpdatePet(id, pet);
+            }
+
+            return Ok();
+        }
+        
     }
 }

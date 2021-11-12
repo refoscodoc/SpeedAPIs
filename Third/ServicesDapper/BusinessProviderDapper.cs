@@ -51,7 +51,7 @@ namespace Third.ServicesDapper
             return pet;
         }
 
-        public async Task UpdatePet(Pet pet, Pet updatedPet)
+        public async Task UpdatePet(int pet, Pet updatedPet)
         {
             // var oldPet = _dataAccessProvider.GetPet(pet.Id);
 
@@ -63,7 +63,7 @@ namespace Third.ServicesDapper
                 Species = updatedPet.Species
             };
 
-            await _dataAccessProviderDapper.UpdatePet(pet.Id, newPet);
+            await _dataAccessProviderDapper.UpdatePet(pet, newPet);
         }
 
         public async Task DeletePet(int petId)

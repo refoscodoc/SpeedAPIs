@@ -11,7 +11,6 @@
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Swashbuckle.AspNetCore.Swagger.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerGen.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/Swashbuckle.AspNetCore.SwaggerUI.dll
-/home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.csprojAssemblyReference.cache
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.GeneratedMSBuildEditorConfig.editorconfig
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.AssemblyInfoInputs.cache
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.AssemblyInfo.cs
@@ -19,7 +18,6 @@
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.MvcApplicationPartsAssemblyInfo.cs
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.MvcApplicationPartsAssemblyInfo.cache
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/staticwebassets/Third.StaticWebAssets.Manifest.cache
-/home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/staticwebassets/Third.StaticWebAssets.xml
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/scopedcss/bundle/Third.styles.css
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.RazorTargetAssemblyInfo.cache
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.csproj.CopyComplete
@@ -78,3 +76,4 @@
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/System.Configuration.ConfigurationManager.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/System.Security.Cryptography.ProtectedData.dll
 /home/alberto/Documents/C Sharp/SpeedAPIs/Third/bin/Debug/net5.0/runtimes/win/lib/netstandard2.0/System.Security.Cryptography.ProtectedData.dll
+/home/alberto/Documents/C Sharp/SpeedAPIs/Third/obj/Debug/net5.0/Third.csproj.AssemblyReference.cache
